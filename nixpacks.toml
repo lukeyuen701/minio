@@ -1,0 +1,13 @@
+[phases.setup]
+nixPkgs = ["go_1_23"]
+
+[start]
+cmd = "minio server /data --console-address ':9001'"
+
+[[ports]]
+port = 9000
+name = "API"
+
+[[ports]]
+port = 9001
+name = "Console"
