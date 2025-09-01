@@ -1,8 +1,11 @@
 [phases.setup]
-nixPkgs = ["go_1_23"]
+nixPkgs = ["go"]
+
+[phases.build]
+cmds = ["go build -o minio"]
 
 [start]
-cmd = "minio server /data --console-address ':9001'"
+cmd = "./minio server /data --console-address ':9001'"
 
 [[ports]]
 port = 9000
